@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:movies_couples_tracker/core/utils/app_animations.dart';
-import 'package:movies_couples_tracker/core/utils/app_images.dart';
 import 'package:movies_couples_tracker/core/utils/app_text_theme.dart';
 import 'package:movies_couples_tracker/core/utils/app_themes_extension.dart';
 import 'package:movies_couples_tracker/core/widgets/theme_dropdown.dart';
-import 'dart:math';
+import 'package:movies_couples_tracker/features/on_boarding_view/presentation/views/welcome_view.dart';
 
-import 'package:movies_couples_tracker/features/on_boarding_view/presentation/views/widgets/diagonal_gradient_background_painter.dart';
 
 class OnBoardingView extends StatelessWidget {
   const OnBoardingView({super.key});
@@ -28,7 +25,6 @@ class OnBoardingView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Spacer(),
-
             SizedBox(
               height: lineY,
               child: Lottie.asset(
@@ -48,7 +44,21 @@ class OnBoardingView extends StatelessWidget {
             ),
             Spacer(),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) => const WelcomeView(),
+                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                      // Fade transition example
+                      return FadeTransition(
+                        opacity: animation,
+                        child: child,
+                      );
+                    },
+                    transitionDuration: const Duration(milliseconds: 600),
+                  ),
+                );
+              },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 14),
                 shape: RoundedRectangleBorder(
@@ -58,9 +68,10 @@ class OnBoardingView extends StatelessWidget {
               ),
               child: Text(
                 'Start Now',
-                style: AppTextStyles.titleLarge(themeExt.text),
+                style: AppTextStyles.titleLarge(Colors.white),
               ),
             ),
+            ThemeDropdown(),
             Spacer(),
 
 

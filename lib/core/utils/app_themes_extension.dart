@@ -34,15 +34,21 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
   }
 
   @override
+  @override
   AppThemeExtension lerp(ThemeExtension<AppThemeExtension>? other, double t) {
     if (other is! AppThemeExtension) return this;
+
+    final minLength = gradient.length < other.gradient.length
+        ? gradient.length
+        : other.gradient.length;
+
     return AppThemeExtension(
       background: Color.lerp(background, other.background, t)!,
       primary: Color.lerp(primary, other.primary, t)!,
       accent: Color.lerp(accent, other.accent, t)!,
       text: Color.lerp(text, other.text, t)!,
       gradient: List<Color>.generate(
-        gradient.length,
+        minLength,
             (i) => Color.lerp(gradient[i], other.gradient[i], t)!,
       ),
     );

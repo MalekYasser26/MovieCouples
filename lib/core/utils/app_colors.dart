@@ -3,56 +3,45 @@ import 'package:flutter/material.dart';
 abstract class AppColors {
   // 🌸 Spring Love Theme
   static const Color springBackground = Color(0xFFFFF8F1);
-  static const Color springPrimary = Color(0xFFFCB5AC);
-  static const Color springAccent = Color(0xFFFFD6A5);
-  static const Color springText = Color(0xFF333333);
+  static const Color springPrimary = Color(0xFFFCB5AC); // Soft coral
+  static const Color springAccent = Color(0xFFFFC1A1); // Peach
+  static const Color springText = Color(0xFF3A3A3A);
   static const List<Color> springGradient = [
-    Color(0xFFFFD6E0),
-    Color(0xFFFFB5C2),
-    Color(0xFFFF9AA2),
-  ];
-
-  // 🍁 Autumn Vibes Theme
-  static const Color autumnBackground = Color(0xFFFFF3E0);
-  static const Color autumnPrimary = Color(0xFFFFA45B);
-  static const Color autumnAccent = Color(0xFFD88C9A);
-  static const Color autumnText = Color(0xFF4E342E);
-  static const List<Color> autumnGradient = [
-    Color(0xFFFFB74D),
-    Color(0xFFFF8A65),
-    Color(0xFFD84315),
-  ];
-
-  // 🌅 Sunset Glow Theme
-  static const Color sunsetBackground = Color(0xFFFFF0EB);
-  static const Color sunsetPrimary = Color(0xFFFF7E67);
-  static const Color sunsetAccent = Color(0xFFFFB26B);
-  static const Color sunsetText = Color(0xFF3E2723);
-  static const List<Color> sunsetGradient = [
-    Color(0xFFFFA07A),
-    Color(0xFFFF6F61),
-    Color(0xFFDD4B39),
+    Color(0xFFFFE5DC),
+    Color(0xFFFFC9B9),
+    Color(0xFFFFAD94),
   ];
 
   // 🌞 Sunrise Blush Theme
   static const Color sunriseBackground = Color(0xFFFFF3F7);
-  static const Color sunrisePrimary = Color(0xFFFFC1CC);
-  static const Color sunriseAccent = Color(0xFFFFE0E9);
+  static const Color sunrisePrimary = Color(0xFFFFA3B5); // Soft rose
+  static const Color sunriseAccent = Color(0xFFFFE0E9); // Pale pink
   static const Color sunriseText = Color(0xFF5D4037);
   static const List<Color> sunriseGradient = [
-    Color(0xFFFFE4E1),
-    Color(0xFFFFC0CB),
-    Color(0xFFFFB6C1),
+    Color(0xFFFFD6E8),
+    Color(0xFFFFA3B5),
+    Color(0xFFF280A1),
   ];
 
-  // 💖 Cutesy Pink Theme
-  static const Color cuteBackground = Color(0xFFFFF5FB);
-  static const Color cutePrimary = Color(0xFFFF8DC7);
-  static const Color cuteAccent = Color(0xFFFFC2E2);
-  static const Color cuteText = Color(0xFF6A1B9A);
-  static const List<Color> cuteGradient = [
-    Color(0xFFFFC1E3),
-    Color(0xFFFF9ECF),
-    Color(0xFFFF70A6),
+  // 🌤 Light Theme (improved with cute/peachy tones)
+  static const Color lightBackground = Color(0xFFFFFFFF);
+  static const Color lightPrimary = Color(0xFFEF476F); // Watermelon red
+  static const Color lightAccent = Color(0xFFFFC6A8); // Creamy peach
+  static const Color lightText = Color(0xFF212121);
+  static const List<Color> lightGradient = [
+    Color(0xFFFFE4E1),
+    Color(0xFFFFB6B9),
+    Color(0xFFFF9AA2),
+  ];
+
+  // 🌑 Dark Theme (improved with teal/purple combo)
+  static const Color darkBackground = Color(0xFF121212);
+  static const Color darkPrimary = Color(0xFF00C2CB); // Bright teal
+  static const Color darkAccent = Color(0xFF9F7AEA); // Soft purple
+  static const Color darkText = Color(0xFFE0E0E0);
+  static const List<Color> darkGradient = [
+    Color(0xFF1A1A2E),
+    Color(0xFF16213E),
+    Color(0xFF0F3460),
   ];
 }

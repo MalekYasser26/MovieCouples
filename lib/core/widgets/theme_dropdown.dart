@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movies_couples_tracker/core/cache/cache_helper.dart';
 import 'package:movies_couples_tracker/core/utils/app_themes.dart';
 import 'package:movies_couples_tracker/core/utils/app_themes_extension.dart';
 import 'package:movies_couples_tracker/core/widgets/view_models/theme_cubit.dart';
@@ -15,17 +16,19 @@ class _ThemeDropdownState extends State<ThemeDropdown> {
   late String selectedTheme;
 
   final Map<String, String> themes = {
-    'spring': 'Spring Love',
-    'autumn': 'Autumn Vibes',
-    'sunset': 'Sunset Glow',
-    'sunrise': 'Sunrise Blush',
-    'cute': 'Cutesy Pink',
+    // 'spring': 'Spring Love',
+    // 'autumn': 'Autumn Vibes',
+    // 'sunset': 'Sunset Glow',
+    // 'sunrise': 'Sunrise Blush',
+    // 'cute': 'Cutesy Pink',
+    'light': 'Light',
+    'dark': 'Dark',
   };
 
   @override
   void initState() {
     super.initState();
-    selectedTheme = 'spring'; // you can load from cache later
+    selectedTheme = 'light';
   }
 
   @override
@@ -40,6 +43,7 @@ class _ThemeDropdownState extends State<ThemeDropdown> {
       onSelected: (value) {
         setState(() {
           selectedTheme = value;
+          CacheHelper().saveData(key: 'theme', value: value);
         });
         context.read<ThemeCubit>().setTheme(value);
       },
@@ -73,12 +77,12 @@ class _ThemeDropdownState extends State<ThemeDropdown> {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         decoration: BoxDecoration(
-          color: selectedColor.withOpacity(0.15),
+          color: selectedColor.withValues(alpha: .15),
           borderRadius: BorderRadius.circular(14),
           border: Border.all(color: selectedColor, width: 1.5),
           boxShadow: [
             BoxShadow(
-              color: selectedColor.withOpacity(0.2),
+              color: selectedColor.withValues(alpha: .2),
               blurRadius: 6,
               offset: const Offset(0, 3),
             ),
